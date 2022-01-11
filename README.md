@@ -1,7 +1,7 @@
 # PhoneBook
 A CRUD web application (Using Java - Jsp and Servlets) that enables user to save their contacts and perform crud operations (create-read-update-delete).
 
-##FEATURES
+## FEATURES
 * LOGIN MANAGEMENT
 * DYNAMIC 
 * Implemented MVC-Pattern (Model-View-Controller)
@@ -10,7 +10,7 @@ A CRUD web application (Using Java - Jsp and Servlets) that enables user to save
 * Smooth Performance
 
 
-##Technologies Used
+## Technologies Used
 * Front-End : HTML + CSS + BOOTSTRAP + JS + JSP
 * BACK-END : SERVLETS
 * DATABASE : MySQL
