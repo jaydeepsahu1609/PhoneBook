@@ -27,13 +27,13 @@ public class LoginServlet extends HttpServlet {
 		UserDAOImpl udi = new UserDAOImpl();
 		boolean valid = udi.validateUser(user);
 
+		HttpSession session = request.getSession();
+
 		if (valid) {
-			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 			System.out.println("User logged in.");
 			response.sendRedirect("index.jsp");
 		} else {
-			HttpSession session = request.getSession();
 			session.setAttribute("invalidUser", "true");
 			response.sendRedirect("login.jsp");
 		}

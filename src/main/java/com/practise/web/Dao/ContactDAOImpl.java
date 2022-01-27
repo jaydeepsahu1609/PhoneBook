@@ -182,9 +182,8 @@ public class ContactDAOImpl implements ContactDAO {
 			return "error";
 
 		try {
-			Connection conn = ConnectionFactory.requestConnection();
+			conn = ConnectionFactory.requestConnection();
 		} catch (ClassNotFoundException | SQLException e1) {
-
 			System.out.println("Could not connect to the database.");
 			e1.printStackTrace();
 			return "error";
@@ -210,7 +209,7 @@ public class ContactDAOImpl implements ContactDAO {
 			int rs = ps.executeUpdate();
 
 			if (rs > 0) {
-				System.out.println("Contact updated. ("+rs+") rows affected.");
+				System.out.println("Contact updated. (" + rs + ") rows affected.");
 				return "true";
 			}
 			System.out.println("Contact not updated.");

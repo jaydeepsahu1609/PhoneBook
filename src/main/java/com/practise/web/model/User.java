@@ -1,6 +1,7 @@
 package com.practise.web.model;
 
 public class User {
+	//for signing-in user
 	private String username, password;
 
 	public User() {

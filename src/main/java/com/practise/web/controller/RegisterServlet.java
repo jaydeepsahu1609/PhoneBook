@@ -14,26 +14,20 @@ import com.practise.web.model.NewUser;
 /**
  * Servlet implementation class RegisterServlet
  */
+@SuppressWarnings("serial")
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String userid = request.getParameter("userid");
-		String fname = request.getParameter("fname");
-		String lname = request.getParameter("lname");
-		String password = request.getParameter("password");
-		String email = request.getParameter("email");
 
 		NewUser user = new NewUser();
-		user.setUserid(userid);
-		user.setFname(fname);
-		user.setLname(lname);
-		user.setEmail(email);
-		user.setPassword(password);
+		user.setUserid(request.getParameter("userid"));
+		user.setFname(request.getParameter("fname"));
+		user.setLname(request.getParameter("lname"));
+		user.setEmail(request.getParameter("email"));
+		user.setPassword(request.getParameter("password"));
 
-		
 		UserDAOImpl udi = new UserDAOImpl();
 		String res = udi.registerUser(user);
 
@@ -43,17 +37,15 @@ public class RegisterServlet extends HttpServlet {
 			System.out.println("User registered.");
 			session.setAttribute("register", "true");
 			response.sendRedirect("login.jsp");
-		} else if(res == "false") {
+		} else if (res == "false") {
 			System.out.println("Registration failed.");
 			session.setAttribute("register", "false");
-			response.sendRedirect("register.jsp");
-		}
-		else {
+		} else {
 			System.out.println("Error while registering.");
 			session.setAttribute("register", "error");
-			response.sendRedirect("register.jsp");
 		}
 
+		response.sendRedirect("register.jsp");
 	}
 
 }

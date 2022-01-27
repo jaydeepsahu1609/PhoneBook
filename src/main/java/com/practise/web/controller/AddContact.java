@@ -29,27 +29,16 @@ public class AddContact extends HttpServlet {
 		contact.setUserid(request.getParameter("userid"));
 		contact.setEmail(request.getParameter("email"));
 		contact.setAbout(request.getParameter("about"));
-		
-		try {
-			ContactDAOImpl cdi = new ContactDAOImpl();
-			String res = cdi.saveContact(contact);
 
-			HttpSession session2 = request.getSession();
+		ContactDAOImpl cdi = new ContactDAOImpl();
+		String res = cdi.saveContact(contact);
 
-//			if (res == "true") {
-//				session2.setAttribute("addContact", "true");
-//			} else if (res == "false") {
-//				session2.setAttribute("addContact", "false");
-//			} else {
-//				session2.setAttribute("addContact", "error");
-//			}
+		HttpSession session2 = request.getSession();
 
-			session2.setAttribute("addContact", res);
-		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
-		} finally {
-			response.sendRedirect("addContact.jsp");
-		}
+		session2.setAttribute("addContact", res);
+
+		response.sendRedirect("addContact.jsp");
+
 	}
 
 }
