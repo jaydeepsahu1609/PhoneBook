@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.practise.web.Dao.UserDao;
+import com.practise.web.DAO.UserDAOImpl;
 import com.practise.web.model.User;
 
 @SuppressWarnings("serial")
@@ -24,11 +24,13 @@ public class LoginServlet extends HttpServlet {
 		user.setUsername(username);
 		user.setPassword(password);
 
-		boolean valid = UserDao.validateUser(user);
+		UserDAOImpl udi = new UserDAOImpl();
+		boolean valid = udi.validateUser(user);
 
 		if (valid) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
+			System.out.println("User logged in.");
 			response.sendRedirect("index.jsp");
 		} else {
 			HttpSession session = request.getSession();

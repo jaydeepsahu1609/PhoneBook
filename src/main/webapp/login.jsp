@@ -11,7 +11,6 @@
 <%@ include file="components/allcomponents.jsp"%>
 
 <style type="text/css">
-
 </style>
 </head>
 <body>
@@ -31,7 +30,9 @@
 						%>
 
 						<h5 class="text-danger mt-3">
-							<script type="text/javascript">alert('User not found!!!!');</script>
+							<%
+							System.out.println("User not found.");
+							%>
 							Invalid User-Name or Password. Please try again.
 						</h5>
 						<%
@@ -59,8 +60,8 @@
 
 						<h5 class="text-success mt-3">
 							Registration Successful!!!<i
-								class="fas fa-glass-cheers text-warning"></i> <br> Please sign-in to
-							access out services.
+								class="fas fa-glass-cheers text-warning"></i> <br> Please
+							sign-in to access out services.
 						</h5>
 
 						<%

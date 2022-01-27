@@ -13,15 +13,33 @@
 			id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link" id="nav-link-0"
-					aria-current="page" href="index.jsp"><i
-						class="fas fa-house-user"></i>&nbsp; Home</a></li>
+					aria-current="page" href="index.jsp" target="_top"><i
+						class="fas fa-house-user text-success"></i>&nbsp; Home</a></li>
+
+				<!-- IF USER IS LOGGED IN, SHOW USERNAME AND LOGOUT OPTIONS -->
+				<%
+				if (session != null && session.getAttribute("user") != null) {
+				%>
 				<li class="nav-item"><a class="nav-link" id="nav-link-1"
-					href="addContact.jsp"><i class="fas fa-user-plus"></i>&nbsp;Add
-						Contact</a></li>
+					href="addContact.jsp" target="_top"><i
+						class="fas fa-user-plus text-danger"></i>&nbsp;Add Contact</a></li>
 				<li class="nav-item"><a class="nav-link" id="nav-link-2"
-					href="viewContact.jsp"><i class="fas fa-eye"></i>&nbsp; View
-						Contact</a></li>
+					href="viewContact.jsp" target="_top"><i
+						class="fas fa-eye text-primary"></i>&nbsp; View Contact</a></li>
 			</ul>
+			<%
+			} else {
+			%>
+			<li class="nav-item"><a class="nav-link" id="nav-link-1"
+				href="#aboutus" target="_top"><i
+					class="fas fa-laptop-code text-info"></i>&nbsp;About Us</a></li>
+			<li class="nav-item"><a class="nav-link" id="nav-link-2"
+				href="#contactUs" target="_top"><i
+					class="fas fa-phone-volume text-warning"></i>&nbsp; Contact Us</a></li>
+			</ul>
+			<%
+			}
+			%>
 
 			<%@ page import="com.practise.web.model.User"%>
 

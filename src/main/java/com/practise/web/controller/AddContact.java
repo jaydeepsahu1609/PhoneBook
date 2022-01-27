@@ -8,9 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.practise.web.Dao.ContactDao;
+import com.practise.web.DAO.ContactDAOImpl;
 import com.practise.web.model.Contact;
-import com.practise.web.model.User;
 
 /**
  * Servlet implementation class AddContact
@@ -28,20 +27,25 @@ public class AddContact extends HttpServlet {
 		contact.setLname(request.getParameter("lname"));
 		contact.setNumber(request.getParameter("number"));
 		contact.setUserid(request.getParameter("userid"));
-
+		contact.setEmail(request.getParameter("email"));
+		contact.setAbout(request.getParameter("about"));
+		
 		try {
-			String res = ContactDao.saveContact(contact);
+			ContactDAOImpl cdi = new ContactDAOImpl();
+			String res = cdi.saveContact(contact);
 
 			HttpSession session2 = request.getSession();
-			if (res == "true") {
-				session2.setAttribute("addContact", "true");
-			} else if (res == "false") {
-				session2.setAttribute("addContact", "false");
-			} else {
-				session2.setAttribute("addContact", "error");
-			}
+
+//			if (res == "true") {
+//				session2.setAttribute("addContact", "true");
+//			} else if (res == "false") {
+//				session2.setAttribute("addContact", "false");
+//			} else {
+//				session2.setAttribute("addContact", "error");
+//			}
+
+			session2.setAttribute("addContact", res);
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println("Error: " + e.getMessage());
 		} finally {
 			response.sendRedirect("addContact.jsp");

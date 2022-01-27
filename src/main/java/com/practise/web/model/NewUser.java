@@ -3,6 +3,18 @@ package com.practise.web.model;
 public class NewUser {
 	private String userid, fname, lname, password, email;
 
+	public NewUser() {
+	}
+
+	public NewUser(String userid, String fname, String lname, String password, String email) {
+
+		this.userid = userid;
+		this.fname = fname;
+		this.lname = lname;
+		this.password = password;
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
 		return "NewUser [userid=" + userid + ", fname=" + fname + ", lname=" + lname + ", password=" + password

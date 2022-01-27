@@ -2,16 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 
-<%
-response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-response.setHeader("Pragma", "no-cache");
-response.setDateHeader("Expires", 0);
-
-if (session.getAttribute("user") == null) {
-	session.setAttribute("invalidAccess", "true");
-	response.sendRedirect("login.jsp");
-}
-%>
+<%@ include file="components/validate.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,11 +24,13 @@ if (session.getAttribute("user") == null) {
 	<div class="container-fluid bg-asphalt" id="login">
 
 		<div
-			class="row align-items-center jusify-content-center text-center font-weight-bolder text-lg w-100 h-100 pt-5">
+			class="row align-items-center jusify-content-center text-center font-weight-bolder pt-5">
 			<div class="col-lg-12 col-md-12 col-sm-12">
-				<div class="alert alert-info text-capitalize" role="alert">
-					Click <a id="alert" class="btn alert-link">here</a> to open the Add
-					Contact Wizard
+				<div class="alert text-light text-capitalize" role="alert">
+					<h3>
+						To open the Add Contact Wizard <br> Click <a id="alert"
+							class="alert-link text-info" style="cursor: pointer">here</a>
+					</h3>
 				</div>
 			</div>
 		</div>
@@ -51,10 +44,10 @@ if (session.getAttribute("user") == null) {
 				<!-- Modal -->
 				<div class="modal fade" id="addContactModalCenter" tabindex="-1"
 					role="dialog" aria-labelledby="addContactModalCenterTitle"
-					aria-hidden="true">
+					aria-hidden="true" style="background-color: rgba(255, 255, 255, 0.3);">
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
-							<div class="modal-header">
+							<div class="modal-header bg-dark text-light">
 								<h5 class="modal-title" id="addContactModalLongTitle">
 									<i class="fas fa-address-card"></i>&nbsp; Add Contact Wizard
 
@@ -62,50 +55,61 @@ if (session.getAttribute("user") == null) {
 								<br>
 
 
-								<button type="button" class="close" data-dismiss="modal"
+								<button type="button" class="close text-light" data-dismiss="modal"
 									aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 
-							<div class="modal-body  p-0 ">
-								<%
-								if (session.getAttribute("addContact") == "true") {
-								%>
+							<div class="modal-body  p-0 bg-asphalt">
+								<div style="padding: 1rem;">
+									<%
+									if (session.getAttribute("addContact") == "true") {
+									%>
 
-								<h5 class="text-success mt-3">
-									<i class="far fa-thumbs-up"></i>&nbsp; Success!! <i
-										class="far fa-thumbs-up"></i>&nbsp;Contact has been
-									successfully added."
-								</h5>
+									<h5 class="text-success mt-3">
+										<i class="far fa-thumbs-up"></i>&nbsp; Success!! <i
+											class="far fa-thumbs-up"></i>&nbsp;Contact has been
+										successfully added."
+									</h5>
 
-								<%
-								session.removeAttribute("addContact");
-								} else if (session.getAttribute("addContact") == "false") {
-								%>
+									<%
+									session.removeAttribute("addContact");
+									} else if (session.getAttribute("addContact") == "false") {
+									%>
 
-								<h5 class="text-danger mt-3">
-									<i class="fas fa-heart-broken text-danger"></i>&nbsp;Contact
-									could not be added. <i class="far fa-sad-tear text-info"></i>&nbsp;
-									Please try again after sometime.
-								</h5>
+									<h5 class="text-danger mt-3">
+										<i class="fas fa-heart-broken text-danger"></i>&nbsp;Contact
+										could not be added. <i class="far fa-sad-tear text-info"></i>&nbsp;
+										Please try again after sometime.
+									</h5>
 
-								<%
-								session.removeAttribute("addContact");
-								} else if (session.getAttribute("addContact") == "error") {
-								%>
+									<%
+									session.removeAttribute("addContact");
+									} else if (session.getAttribute("addContact") == "icvError") {
+									%>
 
-								<h5 class="text-danger mt-3">
-									<i class="fas fa-heart-broken text-danger"></i>&nbsp; An
-									unwanted error has occurred. <i
-										class="far fa-sad-tear text-info"></i>&nbsp; Please try again
-									after sometime.
-								</h5>
+									<h5 class="text-danger mt-3">Phone number already exists.
+									</h5>
 
-								<%
-								session.removeAttribute("addContact");
-								}
-								%>
+									<%
+									session.removeAttribute("addContact");
+									} else if (session.getAttribute("addContact") == "error") {
+									%>
+
+									<h5 class="text-danger mt-3">
+										<i class="fas fa-heart-broken text-danger"></i>&nbsp; An
+										unwanted error has occurred. <i
+											class="far fa-sad-tear text-info"></i>&nbsp; Please try again
+										after sometime.
+									</h5>
+
+									<%
+									session.removeAttribute("addContact");
+									}
+									%>
+								</div>
+
 								<form action="addContact"
 									class="form-control  bg-asphalt text-dark pt-3"
 									id="addContactForm" method="post">
@@ -122,11 +126,16 @@ if (session.getAttribute("user") == null) {
 									%>
 									<div class="input-group">
 										<input type="text" class="form-control" name="fname"
-											placeholder="First Name *" required> <input type="text"
-											class="form-control" name="lname" placeholder="Last Name">
+											placeholder="First Name *" required> <input
+											type="text" class="form-control" name="lname"
+											placeholder="Last Name">
 									</div>
 									<br> <input type="text" class="form-control" name="number"
 										placeholder="Enter Number Here.. *" required>
+			<br> <input type="email" class="form-control" name="email"
+										placeholder="Enter Email of contact" >
+			<br> <input type="text" class="form-control" name="about"
+										placeholder="About" >
 
 									<hr>
 									<div style="justify-content: center !important;"

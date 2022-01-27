@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.practise.web.Dao.UserDao;
+import com.practise.web.DAO.UserDAOImpl;
 import com.practise.web.model.NewUser;
 
 /**
@@ -33,18 +33,23 @@ public class RegisterServlet extends HttpServlet {
 		user.setEmail(email);
 		user.setPassword(password);
 
-		String res = UserDao.registerUser(user);
+		
+		UserDAOImpl udi = new UserDAOImpl();
+		String res = udi.registerUser(user);
 
 		HttpSession session = request.getSession();
 
 		if (res == "true") {
+			System.out.println("User registered.");
 			session.setAttribute("register", "true");
 			response.sendRedirect("login.jsp");
 		} else if(res == "false") {
+			System.out.println("Registration failed.");
 			session.setAttribute("register", "false");
 			response.sendRedirect("register.jsp");
 		}
 		else {
+			System.out.println("Error while registering.");
 			session.setAttribute("register", "error");
 			response.sendRedirect("register.jsp");
 		}

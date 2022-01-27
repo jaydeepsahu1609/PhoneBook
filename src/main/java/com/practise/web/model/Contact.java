@@ -1,22 +1,37 @@
 package com.practise.web.model;
 
 public class Contact {
-	private String number, fname, lname, userid=null;
+	private int contactid;
+	private String userid = null, fname, lname, number, email, about;
 
 	public String getUserid() {
 		return userid;
+	}
+
+	public Contact() {
+	}
+
+	public Contact(int contactid, String userid, String fname, String lname, String number, String email,
+			String about) {
+		this.contactid = contactid;
+		this.userid = userid;
+		this.fname = fname;
+		this.lname = lname;
+		this.number = number;
+		this.email = email;
+		this.about = about;
 	}
 
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
 
-	public String getNumber() {
-		return number;
+	public int getContactid() {
+		return contactid;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setContactid(int contactid) {
+		this.contactid = contactid;
 	}
 
 	public String getFname() {
@@ -35,9 +50,34 @@ public class Contact {
 		this.lname = lname;
 	}
 
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAbout() {
+		return about;
+	}
+
+	public void setAbout(String about) {
+		this.about = about;
+	}
+
 	@Override
 	public String toString() {
-		return "Contact [number=" + number + ", fname=" + fname + ", lname=" + lname + ", userid=" + userid + "]";
+		return "Contact [contactid=" + contactid + ", userid=" + userid + ", fname=" + fname + ", lname=" + lname
+				+ ", number=" + number + ", email=" + email + ", about=" + about + "]";
 	}
-	
+
 }

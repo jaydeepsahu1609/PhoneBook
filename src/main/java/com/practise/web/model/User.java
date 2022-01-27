@@ -3,6 +3,14 @@ package com.practise.web.model;
 public class User {
 	private String username, password;
 
+	public User() {
+	}
+
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + "]";
@@ -23,5 +31,5 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }

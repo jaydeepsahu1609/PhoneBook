@@ -1,80 +1,17 @@
-package com.practise.web.Dao;
+package com.practise.web.DAO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
+import java.util.ArrayList;
 import com.practise.web.model.Contact;
 
-public class ContactDao {
+public interface ContactDAO {
 
-	private static Connection conn = null;
+	String saveContact(Contact contact);
 
-	public static String saveContact(Contact contact) {
-		if (contact == null)
-			return "error";
+	ArrayList<Contact> viewAllContacts(String userid);
 
-		conn = DaoConnection.connect();
-		if (conn != null) {
-			String userid = contact.getUserid();
-			String fname = contact.getFname();
-			String lname = contact.getLname();
-			String number = contact.getNumber();
+	Contact viewContact(String userid, int contactid);
 
-			String iq = "INSERT INTO contacts (userid, fname, lname, contact) VALUES (?, ?, ?, ?);";
+	boolean deleteContact(String userid, int contactid);
 
-			try {
-				PreparedStatement ps = conn.prepareStatement(iq);
-
-				ps.setString(1, userid);
-				ps.setString(2, fname);
-				ps.setString(3, lname);
-				ps.setString(4, number);
-
-				int res = ps.executeUpdate();
-
-				if (res <= 0)
-					return "false";
-
-				return "true";
-
-			} catch (Exception e) {
-				System.out.println("Inside saveContact: " + e.getMessage());
-				return "error";
-			}
-		}
-
-		return "error";
-	}
-
-	public static Contact viewContact(String userid) {
-
-		if (userid == null)
-			return null;
-
-		conn = DaoConnection.connect();
-		if (conn != null) {
-			String iq = "SELECT fname, lname, contact FROM contacts WHERE userid = ?;";
-
-			try {
-				PreparedStatement ps = conn.prepareStatement(iq);
-				ResultSet rs = ps.executeQuery();
-
-				if (rs.next()) {
-					Contact contact = new Contact();
-					contact.setFname(rs.getString("fname"));
-					contact.setLname(rs.getString("lname"));
-					contact.setNumber(rs.getString("contact"));
-					return contact;
-				}
-
-				return null;
-			} catch (Exception e) {
-				return null;
-			}
-		}
-
-		return null;
-	}
-
+	String editContact(Contact contact);
 }
