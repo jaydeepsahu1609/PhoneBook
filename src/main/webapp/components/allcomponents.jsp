@@ -1,4 +1,10 @@
 
+<!-- ____________________________ICON____________________________________ -->
+
+<link rel="shortcut icon" href="components/img/phone-book-icon.png">
+<!--  "Icon made by Pixel perfect from www.flaticon.com"  href="https://www.flaticon.com/free-icons/phone-book"-->
+
+
 <!-- ____________________________BOOTSTRAPS CSS CDN____________________________________ -->
 
 <link rel="stylesheet"

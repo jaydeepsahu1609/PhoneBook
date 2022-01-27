@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	scroll-behavior: smooth;
+}
+
 div, nav, button, a {
 	/*Font awesome not loading when setting *{font-family:'rubik', san-sarif';}*/
 	font-family: 'Rubik', sans-serif !important;
@@ -83,4 +87,388 @@ body {
 	box-shadow: -2px 1px 5px 5px rgba(52, 73, 94, 0.35);
 	-webkit-box-shadow: -2px 1px 5px 5px rgba(52, 73, 94, 0.35);
 	-moz-box-shadow: -2px 1px 5px 5px rgba(52, 73, 94, 0.35);
+}
+
+/*-----------------------------------go-to-top----------------------------------*/
+span#gototop {
+	position: sticky;
+	top: 90%;
+	left: 94%;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1rem;
+	height: 1rem;
+	z-index: 990;
+}
+
+span#gototop>a {
+	text-decoration: none;
+	color: deepskyblue;
+	font-weight: 800;
+	font-size: 4rem;
+	text-shadow: 0px 4px 6px #273c75;
+}
+
+span#gototop>a:hover {
+	transform: rotateY(180deg);
+	transition: all 0.3s linear;
+	color: black;
+}
+/*-----------------------------------followus.jsp----------------------------------*/
+#home {
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.follow-us, .share-us {
+	min-height: 25vh;
+	max-height: auto;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background-color: #34495e !important;
+	color: white;
+	box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+	border-radius: 0.5rem;
+	width: 80%;
+}
+
+.follow-us h2, .share-us h2 {
+	font-weight: bolder;
+	border-bottom: 3px solid white;
+}
+
+.follow-us ul, .share-us ul {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 1rem auto;
+}
+
+.follow-us-tray li, .share-us-tray li {
+	float: left;
+}
+
+.follow-us-tray .fab, .share-us-tray .fab {
+	text-shadow: -2px 0px 19px rgba(150, 150, 150, 0.3);
+}
+
+.follow-us-tray li:hover .fab, .share-us-tray li:hover .fab {
+	transition: all 0.3s linear;
+	transform: rotateY(360deg);
+}
+
+.share-us-tray li span {
+	color: rgba(0, 0, 0, 0.7);
+	text-transform: uppercase;
+}
+
+.share-us-tray li:hover span {
+	color: gold;
+}
+
+.fa-facebook {
+	color: #000080;
+}
+
+.fa-linkedin-in {
+	color: #0000ff;
+}
+
+.fa-whatsapp {
+	color: #008000;
+}
+
+.fa-instagram {
+	color: violet;
+}
+
+.fa-github {
+	color: #000000;
+}
+
+@media only screen and (max-width:1023px) {
+	.follow-us, .share-us {
+		padding: 0.3rem;
+		width: 100%;
+	}
+	#home img {
+		display: none;
+	}
+	.follow-us h2, .share-us h2 {
+		font-weight: bold;
+		font-size: medium;
+		margin-top: 0.7rem;
+	}
+	.share-us-tray li span {
+		font-size: small;
+	}
+	.follow-us-tray .fab, .share-us-tray .fab {
+		font-size: 2.5rem;
+	}
+	.follow-us ul, .share-us ul {
+		margin: 0.5rem auto;
+	}
+}
+
+/*-----------------------------------donateus.jsp----------------------------------*/
+#donateus {
+	width: 100vw;
+	min-height: 100vh;
+	max-height: auto;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 1.5rem;
+	background-image: url("img/help.jpg");
+}
+
+#donateus h2 {
+	color: white;
+	text-transform: uppercase;
+	text-decoration: underline;
+	letter-spacing: 1px;
+	text-align: center;
+	text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+
+#donateus .whytohelp {
+	background-color: rgba(0, 0, 0, 0.5);
+	background-position: center;
+	background-attachment: fixed;
+	padding: 1rem;
+	margin-top: 3rem;
+	color: rgba(255, 255, 255, 0.7);
+	text-align: justify;
+	box-shadow: 1px 1px 26px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 1px 1px 26px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 1px 1px 26px 0px rgba(0, 0, 0, 0.75);
+}
+
+#donateus .whytohelp h4 {
+	margin: 0.3rem auto;
+}
+
+#donateus .supportus {
+	width: auto;
+	padding: 1rem;
+	margin-top: 3rem;
+	color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+#donateus .supportus button {
+	padding: 0.3rem 0.4rem;
+	margin: 0.3rem;
+	border-radius: 0.25rem;
+	box-shadow: -9px 4px 59px -18px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: -9px 4px 59px -18px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -9px 4px 59px -18px rgba(0, 0, 0, 0.75);
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+#donateus .supportus button:hover {
+	transition: all 0.1s linear;
+	color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(100, 100, 100, 0.5);
+	transform: rotateX(360deg);
+}
+
+#dollor, #coffee {
+	animation: blink 2s linear infinite;
+}
+
+@
+keyframes blink { 0%{
+	color: red;
+}
+
+}
+@media only screen and (max-width:1023px) {
+	#donateus  h2 {
+		font-size: medium;
+		letter-spacing: 1px;
+		width: 100%;
+		margin-top: 0.5rem;
+		width: 100%;
+	}
+	#donateus .whytohelp h4 {
+		font-size: medium;
+		padding: 0.5rem;
+		margin-top: 0.5rem;
+		padding: 0.5rem;
+	}
+	#donateus {
+		padding: 0.5rem 0;
+	}
+}
+
+/*-----------------------------------contactus.jsp----------------------------------*/
+#contactus {
+	width: 100vw;
+	min-height: 100vh;
+	max-height: auto;
+	background-attachment: fixed;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#contactus .container {
+	display: flex;
+	height: 75%;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 3rem;
+}
+
+#contactus .container .container-left {
+	min-width: 40%;
+	min-height: 100%;
+}
+
+#contactus
+ 
+.container
+  
+.container-right {
+	min-width: 60%;
+	min-height: 100%;
+	padding-top: 2rem;
+}
+
+#contactus .container-left img {
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+	border-radius: 1rem;
+}
+
+#contactus
+ 
+.container-right
+ 
+.card {
+	box-shadow: -3px 3px 16px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: -3px 3px 16px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -3px 3px 16px 0px rgba(0, 0, 0, 0.75);
+}
+
+#contactus
+ 
+h3 {
+	letter-spacing: 1px;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.contact-us-form
+ 
+.card {
+	margin: 1rem auto;
+	width: 90%;
+}
+
+.contact-us-form
+ 
+.card
+ 
+.card-body {
+	background-color: #f7ee6f;
+}
+
+.contact-us-form
+ 
+.card
+ 
+.card-body
+ 
+form {
+	background-color: #fff78c;
+}
+
+@media only screen and (max-width:767px) {
+	#contactus .container-left {
+		display: none;
+	}
+	#contactus .container-right {
+		width: 100%;
+	}
+}
+
+#contactus .container  .container-right {
+	min-width: 60%;
+	min-height: 100%;
+	padding-top: 2rem;
+}
+
+#contactus
+ 
+.container-left
+ 
+img {
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+	border-radius: 1rem;
+}
+
+#contactus .container-right .card {
+	box-shadow: -3px 3px 16px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: -3px 3px 16px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -3px 3px 16px 0px rgba(0, 0, 0, 0.75);
+}
+
+#contactus h3 {
+	letter-spacing: 1px;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.contact-us-form .card {
+	margin: 1rem auto;
+	width: 90%;
+}
+
+.contact-us-form .card .card-body {
+	background-color: #f7ee6f;
+}
+
+.contact-us-form .card .card-body form {
+	background-color: #fff78c;
+}
+
+@media only screen and (max-width:767px) {
+	#contactus
+ 
+.container-left {
+		display: none;
+	}
+	#contactus
+ 
+.container-right {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px) {
+	#contactus .container-left {
+		width: 30%
+	}
+	#contactus .container-right {
+		width: 70%;
+	}
+	#contactus h3 {
+		font-size: medium;
+	}
 }

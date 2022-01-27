@@ -21,20 +21,38 @@ response.setDateHeader("Expires", 0);
 
 	<%@ include file="components/navbar.jsp"%>
 
-	<div class="container-fluid bg-asphalt" id="login">
-		<!-- TODO: id="login" is temporary -->
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12"></div>
-		</div>
+
+	<%
+	if (session.getAttribute("user") == null) {
+	%>
+	<span id="gototop" title="go to top"><a onclick="gotoTop()"><em
+			class="fa fa-toggle-up"></em></a></span>
+
+	<div class="container-fluid" id="login">
+		<%@ include file="components/followus.jsp"%>
 	</div>
 
+	<%@ include file="components/loginForm.jsp"%>
+
+	<div class="container-fluid" id="donateus">
+		<%@ include file="components/donateUs.jsp"%>
+	</div>
+
+	<div class="container-fluid" id="contactus">
+		<%@ include file="components/contactUs.jsp"%>
+	</div>
+
+	<%
+	}
+	%>
 	<script type="text/javascript">
 window.addEventListener("load", ()=>{
 	document.getElementById("nav-link-0").classList.add("active");
-});
+})
+function gotoTop() {
+	  window.scroll(0, 0);
+	}
 </script>
-
-
 </body>
 
 

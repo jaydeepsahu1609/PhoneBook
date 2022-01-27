@@ -26,21 +26,24 @@
 				<li class="nav-item"><a class="nav-link" id="nav-link-2"
 					href="viewContact.jsp" target="_top"><i
 						class="fas fa-eye text-primary"></i>&nbsp; View Contact</a></li>
-			</ul>
-			<%
-			} else {
-			%>
-			<li class="nav-item"><a class="nav-link" id="nav-link-1"
-				href="#aboutus" target="_top"><i
-					class="fas fa-laptop-code text-info"></i>&nbsp;About Us</a></li>
-			<li class="nav-item"><a class="nav-link" id="nav-link-2"
-				href="#contactUs" target="_top"><i
-					class="fas fa-phone-volume text-warning"></i>&nbsp; Contact Us</a></li>
-			</ul>
-			<%
-			}
-			%>
 
+				<%
+				} else {
+				%>
+				<li class="nav-item"><a class="nav-link" id="nav-link-1"
+					href="#aboutus" target="_top"><i
+						class="fas fa-laptop-code text-info"></i>&nbsp;About Us</a></li>
+				<li class="nav-item"><a class="nav-link" id="nav-link-2"
+					href="#contactus" target="_top"><i
+						class="fas fa-phone-volume text-warning"></i>&nbsp; Contact Us</a></li>
+				<li class="nav-item"><a class="nav-link" id="nav-link-3"
+					href="#donateus" target="_top"><i
+						class="fas fa-rupee-sign text-primary"></i>&nbsp; Donate</a></li>
+
+				<%
+				}
+				%>
+			</ul>
 			<%@ page import="com.practise.web.model.User"%>
 
 
