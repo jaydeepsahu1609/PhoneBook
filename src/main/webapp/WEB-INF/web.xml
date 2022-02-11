@@ -4,24 +4,4 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>DeleteContact</servlet-name>
-  	<display-name>DeleteContact</display-name>
-  	<description></description>
-  	<servlet-class>com.practise.web.controller.DeleteContact</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>EditContact</servlet-name>
-  	<display-name>EditContact</display-name>
-  	<description></description>
-  	<servlet-class>com.practise.web.controller.EditContact</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>DeleteContact</servlet-name>
-  	<url-pattern>/deleteContact</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>EditContact</servlet-name>
-  	<url-pattern>/editContact</url-pattern>
-  </servlet-mapping>
 </web-app>

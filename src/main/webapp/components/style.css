@@ -131,7 +131,7 @@ span#gototop>a:hover {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem;
-	background-color: #34495e !important;
+	background-color: #8080ff!important;
 	color: white;
 	box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
 	-webkit-box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
@@ -159,15 +159,18 @@ span#gototop>a:hover {
 
 .follow-us-tray .fab, .share-us-tray .fab {
 	text-shadow: -2px 0px 19px rgba(150, 150, 150, 0.3);
+	opacity: 0.5;
 }
 
 .follow-us-tray li:hover .fab, .share-us-tray li:hover .fab {
 	transition: all 0.3s linear;
 	transform: rotateY(360deg);
+	text-shadow: -2px 0px 19px rgba(150, 150, 150, 0.8);
+	opacity: 1;
 }
 
 .share-us-tray li span {
-	color: rgba(0, 0, 0, 0.7);
+	color: rgba(255, 255, 255, 0.7);
 	text-transform: uppercase;
 }
 
@@ -267,7 +270,7 @@ span#gototop>a:hover {
 }
 
 #donateus .supportus button {
-	padding: 0.3rem 0.4rem;
+	padding: 0.4rem 0.6rem;
 	margin: 0.3rem;
 	border-radius: 0.25rem;
 	box-shadow: -9px 4px 59px -18px rgba(0, 0, 0, 0.75);
@@ -278,19 +281,24 @@ span#gototop>a:hover {
 }
 
 #donateus .supportus button:hover {
-	transition: all 0.1s linear;
-	color: rgba(0, 0, 0, 0.8);
-	background-color: rgba(100, 100, 100, 0.5);
+	transition: all 0.3s linear;
+	background-color:blue;
 	transform: rotateX(360deg);
 }
 
 #dollor, #coffee {
+	color:red;
 	animation: blink 2s linear infinite;
 }
 
-@
-keyframes blink { 0%{
-	color: red;
+#dollor{
+	animation-delay:1s;
+}
+
+
+@keyframes blink { 
+	0%{
+	color: orange;
 }
 
 }

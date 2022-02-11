@@ -20,7 +20,13 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		System.out.println("Inside register");
+		if (request.getParameter("userid") == null) {
+			HttpSession session = request.getSession();
+			System.out.println("No parameter obtained.");
+			session.setAttribute("register", "error");
+			response.sendRedirect("register.jsp");
+		}
 		NewUser user = new NewUser();
 		user.setUserid(request.getParameter("userid"));
 		user.setFname(request.getParameter("fname"));
@@ -37,15 +43,14 @@ public class RegisterServlet extends HttpServlet {
 			System.out.println("User registered.");
 			session.setAttribute("register", "true");
 			response.sendRedirect("login.jsp");
-		} else if (res == "false") {
+		} else { if (res == "false") {
 			System.out.println("Registration failed.");
-			session.setAttribute("register", "false");
-		} else {
+			session.setAttribute("register", "false");}
+		 else {
 			System.out.println("Error while registering.");
 			session.setAttribute("register", "error");
-		}
-
+		 	}
 		response.sendRedirect("register.jsp");
+		}
 	}
-
 }

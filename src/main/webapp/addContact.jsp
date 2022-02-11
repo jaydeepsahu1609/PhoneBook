@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 
-<%@ include file="components/validate.jsp"%>
+<%@ include file="components/checkLogIn.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -13,25 +13,10 @@
 	crossorigin="anonymous">
 
 
-
-<!-- ____________________________ AJAX CDN____________________________________ -->
+<!-- ____________________________ jQuery CDN____________________________________ -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<!-- ____________________________FONT AWESOME CDN____________________________________ -->
-<script src="https://kit.fontawesome.com/36553a87b3.js"
-	crossorigin="anonymous"></script>
 
-
-<!-- ____________________________GOOGLE FONTS CDN____________________________________ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com"
-	crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
-	rel="stylesheet">
-
-<link
-	href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap"
-	rel="stylesheet">
 
 <!-- ____________________________BOOTSTRAPS JS CDN____________________________________ -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -54,6 +39,22 @@
 	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
 	crossorigin="anonymous"></script>
 
+<!-- ____________________________FONT AWESOME CDN____________________________________ -->
+<script src="https://kit.fontawesome.com/36553a87b3.js"
+	crossorigin="anonymous"></script>
+
+
+<!-- ____________________________GOOGLE FONTS CDN____________________________________ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com"
+	crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+	rel="stylesheet">
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap"
+	rel="stylesheet">
+	
 <!-- ____________________________LINK:CSS____________________________________ -->
 
 <link href="components/style.css" rel="stylesheet" type="text/css">
