@@ -13,6 +13,6 @@
 - - -
 
 ## Technologies Used
-  * Front-End : HTML + CSS + BOOTSTRAP + JS + JSP
-  * BACK-END : SERVLETS
+  * Front-End : HTML + CSS + BOOTSTRAP + JS
+  * BACK-END : JSP & SERVLETS
   * DATABASE : MySQL
